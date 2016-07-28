@@ -24,6 +24,7 @@ import java.util.Map;
 public class AuthClient {
     private static final String URL_AUTH_TOKEN = "https://auth.beta2.ucs.ricoh.com/auth/token";
     private static final String URL_AUTH_DISCOVERY = "https://auth.beta2.ucs.ricoh.com/auth/discovery";
+    private static final int EXPIRE_MARGIN = -10;
 
     private String clientId;
     private String clientSecret;
@@ -63,7 +64,9 @@ public class AuthClient {
             return;
         }
 
-        if (Calendar.getInstance().before(expire)) {
+        Calendar expireWithMargin = (Calendar) expire.clone();
+        expireWithMargin.add(Calendar.SECOND, EXPIRE_MARGIN);
+        if (Calendar.getInstance().before(expireWithMargin)) {
             handler.onCompleted(new AuthResult(accessToken));
             return;
         }
