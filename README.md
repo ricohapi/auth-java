@@ -19,7 +19,7 @@ If you don't have them, please register yourself and your client from [THETA Dev
 This section shows you to install Ricoh Auth Client for Java in your application.  
 See [Auth Sample](https://github.com/ricohapi/auth-java/tree/master/sample#auth-sample) to try out a sample of Ricoh Auth Client for Java.
 
-* Download: [`ricoh-api-auth.jar`](https://github.com/ricohapi/auth-java/blob/v1.0.0/lib/ricoh-api-auth.jar?raw=true)
+* Download: [`ricoh-api-auth.jar`](https://github.com/ricohapi/auth-java/blob/v1.1.1/lib/ricoh-api-auth.jar?raw=true)
 * Drag `ricoh-api-auth.jar` into a directory (ex. `libs`) of your application.
 * Edit your application's `build.gradle` as follows.
 ```java
